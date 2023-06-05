@@ -21,12 +21,14 @@ Product.init(
     },
     price: {
       type: DataTypes.DECIMAL,
+      allowNull: false,
       validate: {
         isDecimal: true,
       }
     },
     stock: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       defaultValue: 10,
       validate: {
         isNumeric: true,
@@ -35,7 +37,6 @@ Product.init(
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        // This references the `driver` model, which we set in `Driver.js` as its `modelName` property
         model: 'category',
         key: 'id'
     }
